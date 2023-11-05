@@ -17,6 +17,7 @@ resource "alicloud_db_instance" "default" {
 
 }
 
+
 #resource "alicloud_db_readonly_instance" "default" {
 #  zone_id               = data.alicloud_db_zones.default.zones.0.id
 #  master_db_instance_id = alicloud_db_instance.default.id

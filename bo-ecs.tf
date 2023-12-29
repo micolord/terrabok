@@ -20,19 +20,19 @@ resource "alicloud_instance" "bo_ecs_instance_1" {
   }
 }
 
-resource "alicloud_instance" "bo_ecs_instance_2" {
-  instance_name        = "${var.env_name}-${var.project}-bo-2"
-  image_id             = data.alicloud_images.ubuntu.ids.0
-  instance_type        = "ecs.g7.large"
-  security_groups      = [alicloud_security_group.bo-sg.id]
-  vswitch_id           = module.vpc.vswitch_ids[1]
-  password             = "dynamic_random_password"
-  system_disk_category = "cloud_essd"
-  system_disk_size     = 100
-  tags = {
-    Name = "${var.env_name}-${var.project}-bo"
-  }
-  volume_tags = {
-    Name = "${var.env_name}-${var.project}-bo"
-  }
-}
+#resource "alicloud_instance" "bo_ecs_instance_2" {
+#  instance_name        = "${var.env_name}-${var.project}-bo-2"
+#  image_id             = data.alicloud_images.ubuntu.ids.0
+#  instance_type        = "ecs.g7.large"
+#  security_groups      = [alicloud_security_group.bo-sg.id]
+#  vswitch_id           = module.vpc.vswitch_ids[1]
+#  password             = "dynamic_random_password"
+#  system_disk_category = "cloud_essd"
+#  system_disk_size     = 100
+#  tags = {
+#    Name = "${var.env_name}-${var.project}-bo"
+#  }
+#  volume_tags = {
+#    Name = "${var.env_name}-${var.project}-bo"
+#  }
+#}

@@ -211,12 +211,12 @@ resource "alicloud_alb_server_group" "jobproc_grp" {
     server_id   = alicloud_instance.jobproc_ecs_instance_1.id
     server_type = "Ecs"
   }
-  servers {
-    description = "${var.env_name}-${var.project}-jobproc-2"
-    port        = 80
-    server_id   = alicloud_instance.jobproc_ecs_instance_2.id
-    server_type = "Ecs"
-  }
+  #servers {
+  #  description = "${var.env_name}-${var.project}-jobproc-2"
+  #  port        = 80
+  #  server_id   = alicloud_instance.jobproc_ecs_instance_2.id
+  #  server_type = "Ecs"
+  #}
 }
 
 resource "alicloud_alb_rule" "socket_rule" {
@@ -272,10 +272,10 @@ resource "alicloud_alb_server_group" "socket_grp" {
     server_id   = alicloud_instance.socket_ecs_instance_1.id
     server_type = "Ecs"
   }
-  servers {
-    description = "${var.env_name}-${var.project}-socket-2"
-    port        = 80
-    server_id   = alicloud_instance.socket_ecs_instance_2.id
-    server_type = "Ecs"
-  }
+  #servers {
+  #  description = "${var.env_name}-${var.project}-socket-2"
+  #  port        = 80
+  #  server_id   = alicloud_instance.socket_ecs_instance_2.id
+  #  server_type = "Ecs"
+  #}
 }

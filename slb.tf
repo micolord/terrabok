@@ -89,12 +89,12 @@ resource "alicloud_alb_server_group" "fe_grp" {
     server_id   = alicloud_instance.fe_ecs_instance_1.id
     server_type = "Ecs"
   }
-  servers {
-    description = "${var.env_name}-${var.project}-fe-2"
-    port        = 80
-    server_id   = alicloud_instance.fe_ecs_instance_2.id
-    server_type = "Ecs"
-  }
+  #servers {
+  #  description = "${var.env_name}-${var.project}-fe-2"
+  #  port        = 80
+  #  server_id   = alicloud_instance.fe_ecs_instance_2.id
+  #  server_type = "Ecs"
+  #}
 }
 
 resource "alicloud_alb_rule" "bo_rule" {
@@ -150,12 +150,12 @@ resource "alicloud_alb_server_group" "bo_grp" {
     server_id   = alicloud_instance.bo_ecs_instance_1.id
     server_type = "Ecs"
   }
-  servers {
-    description = "${var.env_name}-${var.project}-bo-2"
-    port        = 80
-    server_id   = alicloud_instance.bo_ecs_instance_2.id
-    server_type = "Ecs"
-  }
+  #servers {
+  #  description = "${var.env_name}-${var.project}-bo-2"
+  #  port        = 80
+  #  server_id   = alicloud_instance.bo_ecs_instance_2.id
+  #  server_type = "Ecs"
+  #}
 }
 
 resource "alicloud_alb_rule" "jobproc_rule" {

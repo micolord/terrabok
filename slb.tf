@@ -66,12 +66,12 @@ resource "alicloud_alb_rule" "gl_fe_rule" {
   rule_name   = "${var.env_name}-${var.project}-fe-rule"
   listener_id = alicloud_alb_listener.default_80.id
   priority    = "1"
-  #rule_conditions {
-  #  type = "Host"
-  #  host_config {
-  #    values = ["${var.gl_fe_domain}"]
-  #  }
-  #}
+  rule_conditions {
+    type = "Host"
+    host_config {
+      values = ["tf-example1-fe.com"]
+    }
+  }
 
   rule_actions {
     forward_group_config {

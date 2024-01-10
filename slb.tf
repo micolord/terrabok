@@ -57,21 +57,21 @@ resource "alicloud_alb_listener" "default_443" {
       }
     }
   }
-  certificates {
-    certificate_id = var.cert_id
-  }
+  #certificates {
+  #  certificate_id = var.cert_id
+  #}
 }
 
 resource "alicloud_alb_rule" "gl_fe_rule" {
   rule_name   = "${var.env_name}-${var.project}-fe-rule"
   listener_id = alicloud_alb_listener.default_80.id
   priority    = "1"
-  rule_conditions {
-    type = "Host"
-    host_config {
-      values = ["${var.gl_fe_domain}"]
-    }
-  }
+  #rule_conditions {
+  #  type = "Host"
+  #  host_config {
+  #    values = ["${var.gl_fe_domain}"]
+  #  }
+  #}
 
   rule_actions {
     forward_group_config {

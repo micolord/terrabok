@@ -69,7 +69,7 @@ resource "alicloud_alb_rule" "gl_fe_rule" {
   rule_conditions {
     type = "Host"
     host_config {
-      values = ["tf-example1-fe.com"]
+      values = ["bokbok.vip"]
     }
   }
 
@@ -91,7 +91,7 @@ resource "alicloud_alb_rule" "gl_fe_rule_https" {
   rule_conditions {
     type = "Host"
     host_config {
-      values = ["${var.gl_fe_domain}"]
+      values = ["gl-fe.bokbok.vip"]
     }
   }
 
@@ -145,7 +145,7 @@ resource "alicloud_alb_rule" "gl_be_rule" {
   rule_conditions {
     type = "Host"
     host_config {
-      values = ["${var.gl_be_domain}"]
+      values = ["gl-be.bokbok.vip"]
     }
   }
 
@@ -167,7 +167,7 @@ resource "alicloud_alb_rule" "gl_be_rule_https" {
   rule_conditions {
     type = "Host"
     host_config {
-      values = ["${var.gl_be_domain}"]
+      values = ["gl-be.bokbok.vip"]
     }
   }
 
@@ -220,7 +220,7 @@ resource "alicloud_alb_rule" "bo_fe_rule" {
   rule_conditions {
     type = "Host"
     host_config {
-      values = ["${var.bo_fe_domain}"]
+      values = ["bo-fe.bokbok.vip"]
     }
   }
 
@@ -242,7 +242,7 @@ resource "alicloud_alb_rule" "bo_fe_rule_https" {
   rule_conditions {
     type = "Host"
     host_config {
-      values = ["${var.bo_fe_domain}"]
+      values = ["bo-fe.bokbok.vip"]
     }
   }
 
@@ -295,7 +295,7 @@ resource "alicloud_alb_rule" "bo_be_rule" {
   rule_conditions {
     type = "Host"
     host_config {
-      values = ["${var.bo_be_domain}"]
+      values = ["bo-be.bokbok.vip"]
     }
   }
 
@@ -370,7 +370,7 @@ resource "alicloud_alb_rule" "jobproc_rule" {
   rule_conditions {
     type = "Host"
     host_config {
-      values = ["${var.jobproc_domain}"]
+      values = ["jobproc.bokbok.vip"]
     }
   }
 
@@ -392,7 +392,7 @@ resource "alicloud_alb_rule" "jobproc_rule_https" {
   rule_conditions {
     type = "Host"
     host_config {
-      values = ["${var.jobproc_domain}"]
+      values = ["jobproc.bokbok.vip"]
     }
   }
 
@@ -445,7 +445,7 @@ resource "alicloud_alb_rule" "socket_rule" {
   rule_conditions {
     type = "Host"
     host_config {
-      values = ["${var.socket_domain}"]
+      values = ["socket.bokbok.vip"]
     }
   }
 
@@ -467,7 +467,7 @@ resource "alicloud_alb_rule" "socket_rule_https" {
   rule_conditions {
     type = "Host"
     host_config {
-      values = ["${var.socket_domain}"]
+      values = ["socket.bokbok.vip"]
     }
   }
 

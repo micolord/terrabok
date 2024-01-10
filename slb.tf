@@ -317,7 +317,7 @@ resource "alicloud_alb_rule" "bo_be_rule_https" {
   rule_conditions {
     type = "Host"
     host_config {
-      values = ["${var.bo_be_domain}"]
+      values = ["bo-be.bokbok.vip"]
     }
   }
 

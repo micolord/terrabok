@@ -1,5 +1,5 @@
 resource "alicloud_instance" "socket_ecs_instance_1" {
-  instance_name        = "${var.env_name}-${var.project}-socket-1"
+  instance_name        = "${var.env_name}-${var.project}-socket"
   image_id             = data.alicloud_images.ubuntu.ids.0
   instance_type        = "ecs.g7.large"
   security_groups      = [alicloud_security_group.fe-sg.id]

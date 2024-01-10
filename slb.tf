@@ -40,27 +40,27 @@ resource "alicloud_alb_listener" "default_80" {
   }
 }
 
-resource "alicloud_alb_listener" "default_443" {
-  load_balancer_id     = alicloud_alb_load_balancer.default.id
-  listener_protocol    = "HTTPS"
-  listener_port        = 443
-  listener_description = "${var.env_name}-${var.project}-443-listener"
-  x_forwarded_for_config {
-    x_forwarded_for_proto_enabled = true
-    x_forwarded_for_enabled = true
-  }
-  default_actions {
-    type = "ForwardGroup"
-    forward_group_config {
-      server_group_tuples {
-       server_group_id = alicloud_alb_server_group.gl_fe_grp.id
-      }
-    }
-  }
+#resource "alicloud_alb_listener" "default_443" {
+#  load_balancer_id     = alicloud_alb_load_balancer.default.id
+#  listener_protocol    = "HTTPS"
+#  listener_port        = 443
+#  listener_description = "${var.env_name}-${var.project}-443-listener"
+#  x_forwarded_for_config {
+#    x_forwarded_for_proto_enabled = true
+#    x_forwarded_for_enabled = true
+#  }
+#  default_actions {
+#    type = "ForwardGroup"
+#    forward_group_config {
+#      server_group_tuples {
+#       server_group_id = alicloud_alb_server_group.gl_fe_grp.id
+#      }
+#    }
+#  }
   #certificates {
   #  certificate_id = var.cert_id
   #}
-}
+#}
 
 resource "alicloud_alb_rule" "gl_fe_rule" {
   rule_name   = "${var.env_name}-${var.project}-fe-rule"

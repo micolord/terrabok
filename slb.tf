@@ -441,7 +441,7 @@ resource "alicloud_alb_server_group" "jobproc_grp" {
 resource "alicloud_alb_rule" "socket_rule" {
   rule_name   = "${var.env_name}-${var.project}-socket-rule"
   listener_id = alicloud_alb_listener.default_80.id
-  priority    = "5"
+  priority    = "6"
   rule_conditions {
     type = "Host"
     host_config {

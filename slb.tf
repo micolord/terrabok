@@ -84,27 +84,27 @@ resource "alicloud_alb_rule" "gl_fe_rule" {
   }
 }
 
-resource "alicloud_alb_rule" "gl_fe_rule_https" {
-  rule_name   = "${var.env_name}-${var.project}-fe-rule-https"
-  listener_id = alicloud_alb_listener.default_443.id
-  priority    = "1"
-  rule_conditions {
-    type = "Host"
-    host_config {
-      values = ["gl-fe.bokbok.vip"]
-    }
-  }
+#resource "alicloud_alb_rule" "gl_fe_rule_https" {
+#  rule_name   = "${var.env_name}-${var.project}-fe-rule-https"
+#  listener_id = alicloud_alb_listener.default_443.id
+#  priority    = "1"
+#  rule_conditions {
+#    type = "Host"
+#    host_config {
+#      values = ["gl-fe.bokbok.vip"]
+#    }
+#  }
 
-  rule_actions {
-    forward_group_config {
-      server_group_tuples {
-        server_group_id = alicloud_alb_server_group.gl_fe_grp.id
-      }
-    }
-    order = "1"
-    type  = "ForwardGroup"
-  }
-}
+#  rule_actions {
+#    forward_group_config {
+#      server_group_tuples {
+#        server_group_id = alicloud_alb_server_group.gl_fe_grp.id
+#      }
+#    }
+#    order = "1"
+#    type  = "ForwardGroup"
+#  }
+#}
 
 
 resource "alicloud_alb_server_group" "gl_fe_grp" {
@@ -160,27 +160,27 @@ resource "alicloud_alb_rule" "gl_be_rule" {
   }
 }
 
-resource "alicloud_alb_rule" "gl_be_rule_https" {
-  rule_name   = "${var.env_name}-${var.project}-be-rule-https"
-  listener_id = alicloud_alb_listener.default_443.id
-  priority    = "2"
-  rule_conditions {
-    type = "Host"
-    host_config {
-      values = ["gl-be.bokbok.vip"]
-    }
-  }
+#resource "alicloud_alb_rule" "gl_be_rule_https" {
+#  rule_name   = "${var.env_name}-${var.project}-be-rule-https"
+#  listener_id = alicloud_alb_listener.default_443.id
+#  priority    = "2"
+#  rule_conditions {
+#    type = "Host"
+#    host_config {
+#      values = ["gl-be.bokbok.vip"]
+#    }
+#  }
 
-  rule_actions {
-    forward_group_config {
-      server_group_tuples {
-        server_group_id = alicloud_alb_server_group.gl_be_grp.id
-      }
-    }
-    order = "1"
-    type  = "ForwardGroup"
-  }
-}
+#  rule_actions {
+#    forward_group_config {
+#      server_group_tuples {
+#        server_group_id = alicloud_alb_server_group.gl_be_grp.id
+#      }
+#    }
+#    order = "1"
+#    type  = "ForwardGroup"
+#  }
+#}
 
 resource "alicloud_alb_server_group" "gl_be_grp" {
   protocol          = "HTTP"
@@ -235,27 +235,27 @@ resource "alicloud_alb_rule" "bo_fe_rule" {
   }
 }
 
-resource "alicloud_alb_rule" "bo_fe_rule_https" {
-  rule_name   = "${var.env_name}-${var.project}-bo-fe-rule-https"
-  listener_id = alicloud_alb_listener.default_443.id
-  priority    = "3"
-  rule_conditions {
-    type = "Host"
-    host_config {
-      values = ["bo-fe.bokbok.vip"]
-    }
-  }
+#resource "alicloud_alb_rule" "bo_fe_rule_https" {
+#  rule_name   = "${var.env_name}-${var.project}-bo-fe-rule-https"
+#  listener_id = alicloud_alb_listener.default_443.id
+#  priority    = "3"
+#  rule_conditions {
+#    type = "Host"
+#    host_config {
+#      values = ["bo-fe.bokbok.vip"]
+#    }
+#  }
 
-  rule_actions {
-    forward_group_config {
-      server_group_tuples {
-        server_group_id = alicloud_alb_server_group.bo_fe_grp.id
-      }
-    }
-    order = "1"
-    type  = "ForwardGroup"
-  }
-}
+#  rule_actions {
+#    forward_group_config {
+#      server_group_tuples {
+#        server_group_id = alicloud_alb_server_group.bo_fe_grp.id
+#      }
+#    }
+#    order = "1"
+#    type  = "ForwardGroup"
+#  }
+#}
 
 resource "alicloud_alb_server_group" "bo_fe_grp" {
   protocol          = "HTTP"
@@ -310,27 +310,27 @@ resource "alicloud_alb_rule" "bo_be_rule" {
   }
 }
 
-resource "alicloud_alb_rule" "bo_be_rule_https" {
-  rule_name   = "${var.env_name}-${var.project}-bo-be-rule-https"
-  listener_id = alicloud_alb_listener.default_443.id
-  priority    = "4"
-  rule_conditions {
-    type = "Host"
-    host_config {
-      values = ["bo-be.bokbok.vip"]
-    }
-  }
+#resource "alicloud_alb_rule" "bo_be_rule_https" {
+#  rule_name   = "${var.env_name}-${var.project}-bo-be-rule-https"
+#  listener_id = alicloud_alb_listener.default_443.id
+#  priority    = "4"
+#  rule_conditions {
+#    type = "Host"
+#    host_config {
+#      values = ["bo-be.bokbok.vip"]
+#    }
+#  }
 
-  rule_actions {
-    forward_group_config {
-      server_group_tuples {
-        server_group_id = alicloud_alb_server_group.bo_be_grp.id
-      }
-    }
-    order = "1"
-    type  = "ForwardGroup"
-  }
-}
+#  rule_actions {
+#    forward_group_config {
+#      server_group_tuples {
+#        server_group_id = alicloud_alb_server_group.bo_be_grp.id
+#      }
+#    }
+#    order = "1"
+#    type  = "ForwardGroup"
+#  }
+#}
 
 resource "alicloud_alb_server_group" "bo_be_grp" {
   protocol          = "HTTP"
@@ -385,27 +385,27 @@ resource "alicloud_alb_rule" "jobproc_rule" {
   }
 }
 
-resource "alicloud_alb_rule" "jobproc_rule_https" {
-  rule_name   = "${var.env_name}-${var.project}-jobproc-rule-https"
-  listener_id = alicloud_alb_listener.default_443.id
-  priority    = "5"
-  rule_conditions {
-    type = "Host"
-    host_config {
-      values = ["jobproc.bokbok.vip"]
-    }
-  }
+#resource "alicloud_alb_rule" "jobproc_rule_https" {
+#  rule_name   = "${var.env_name}-${var.project}-jobproc-rule-https"
+#  listener_id = alicloud_alb_listener.default_443.id
+#  priority    = "5"
+#  rule_conditions {
+#    type = "Host"
+#    host_config {
+#      values = ["jobproc.bokbok.vip"]
+#    }
+#  }
 
-  rule_actions {
-    forward_group_config {
-      server_group_tuples {
-        server_group_id = alicloud_alb_server_group.jobproc_grp.id
-      }
-    }
-    order = "1"
-    type  = "ForwardGroup"
-  }
-}
+#  rule_actions {
+#    forward_group_config {
+#      server_group_tuples {
+#        server_group_id = alicloud_alb_server_group.jobproc_grp.id
+#      }
+#    }
+#    order = "1"
+#    type  = "ForwardGroup"
+#  }
+#}
 
 resource "alicloud_alb_server_group" "jobproc_grp" {
   protocol          = "HTTP"
@@ -460,27 +460,27 @@ resource "alicloud_alb_rule" "socket_rule" {
   }
 }
 
-resource "alicloud_alb_rule" "socket_rule_https" {
-  rule_name   = "${var.env_name}-${var.project}-socket-rule-https"
-  listener_id = alicloud_alb_listener.default_443.id
-  priority    = "5"
-  rule_conditions {
-    type = "Host"
-    host_config {
-      values = ["socket.bokbok.vip"]
-    }
-  }
+#resource "alicloud_alb_rule" "socket_rule_https" {
+#  rule_name   = "${var.env_name}-${var.project}-socket-rule-https"
+#  listener_id = alicloud_alb_listener.default_443.id
+#  priority    = "5"
+#  rule_conditions {
+#    type = "Host"
+#    host_config {
+#      values = ["socket.bokbok.vip"]
+#    }
+#  }
 
-  rule_actions {
-    forward_group_config {
-      server_group_tuples {
-        server_group_id = alicloud_alb_server_group.socket_grp.id
-      }
-    }
-    order = "1"
-    type  = "ForwardGroup"
-  }
-}
+#  rule_actions {
+#    forward_group_config {
+#      server_group_tuples {
+#        server_group_id = alicloud_alb_server_group.socket_grp.id
+#      }
+#    }
+#    order = "1"
+#    type  = "ForwardGroup"
+#  }
+#}
 
 resource "alicloud_alb_server_group" "socket_grp" {
   protocol          = "HTTP"

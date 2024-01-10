@@ -506,7 +506,7 @@ resource "alicloud_alb_server_group" "socket_grp" {
     sticky_session_type    = "Server"
   }
   servers {
-    description = "${var.env_name}-${var.project}-socket-1"
+    description = "${var.env_name}-${var.project}-socket"
     port        = 80
     server_id   = alicloud_instance.socket_ecs_instance_1.id
     server_type = "Ecs"

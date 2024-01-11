@@ -69,7 +69,7 @@ resource "alicloud_alb_rule" "gl_fe_rule" {
   rule_conditions {
     type = "Host"
     host_config {
-      values = ["bokbok.vip"]
+      values = ["bokbokgp.vip"]
     }
   }
 
@@ -91,7 +91,7 @@ resource "alicloud_alb_rule" "gl_fe_rule" {
 #  rule_conditions {
 #    type = "Host"
 #    host_config {
-#      values = ["gl-fe.bokbok.vip"]
+#      values = ["gl-fe.bokbokgp.vip"]
 #    }
 #  }
 
@@ -145,7 +145,7 @@ resource "alicloud_alb_rule" "gl_be_rule" {
   rule_conditions {
     type = "Host"
     host_config {
-      values = ["gl-be.bokbok.vip"]
+      values = ["gl-be.bokbokgp.vip"]
     }
   }
 
@@ -167,7 +167,7 @@ resource "alicloud_alb_rule" "gl_be_rule" {
 #  rule_conditions {
 #    type = "Host"
 #    host_config {
-#      values = ["gl-be.bokbok.vip"]
+#      values = ["gl-be.bokbokgp.vip"]
 #    }
 #  }
 
@@ -220,7 +220,7 @@ resource "alicloud_alb_rule" "bo_fe_rule" {
   rule_conditions {
     type = "Host"
     host_config {
-      values = ["bo-fe.bokbok.vip"]
+      values = ["bo-fe.bokbokgp.vip"]
     }
   }
 
@@ -242,7 +242,7 @@ resource "alicloud_alb_rule" "bo_fe_rule" {
 #  rule_conditions {
 #    type = "Host"
 #    host_config {
-#      values = ["bo-fe.bokbok.vip"]
+#      values = ["bo-fe.bokbokgp.vip"]
 #    }
 #  }
 
@@ -295,7 +295,7 @@ resource "alicloud_alb_rule" "bo_be_rule" {
   rule_conditions {
     type = "Host"
     host_config {
-      values = ["bo-be.bokbok.vip"]
+      values = ["bo-be.bokbokgp.vip"]
     }
   }
 
@@ -317,7 +317,7 @@ resource "alicloud_alb_rule" "bo_be_rule" {
 #  rule_conditions {
 #    type = "Host"
 #    host_config {
-#      values = ["bo-be.bokbok.vip"]
+#      values = ["bo-be.bokbokgp.vip"]
 #    }
 #  }
 
@@ -370,7 +370,7 @@ resource "alicloud_alb_rule" "jobproc_rule" {
   rule_conditions {
     type = "Host"
     host_config {
-      values = ["jobproc.bokbok.vip"]
+      values = ["jobproc.bokbokgp.vip"]
     }
   }
 
@@ -392,7 +392,7 @@ resource "alicloud_alb_rule" "jobproc_rule" {
 #  rule_conditions {
 #    type = "Host"
 #    host_config {
-#      values = ["jobproc.bokbok.vip"]
+#      values = ["jobproc.bokbokgp.vip"]
 #    }
 #  }
 
@@ -445,7 +445,7 @@ resource "alicloud_alb_rule" "socket_rule" {
   rule_conditions {
     type = "Host"
     host_config {
-      values = ["socket.bokbok.vip"]
+      values = ["socket.bokbokgp.vip"]
     }
   }
 
@@ -467,7 +467,7 @@ resource "alicloud_alb_rule" "socket_rule" {
 #  rule_conditions {
 #    type = "Host"
 #    host_config {
-#      values = ["socket.bokbok.vip"]
+#      values = ["socket.bokbokgp.vip"]
 #    }
 #  }
 

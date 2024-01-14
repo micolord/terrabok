@@ -1,6 +1,6 @@
 resource "alicloud_instance" "bastion_1" {
   instance_name        = "${var.env_name}-${var.project}-bastion"
-  image_id             = data.alicloud_images.ubuntu.ids.0
+  image_id             = "ubuntu_20_04_x64_20G_alibase_20231221.vhd"
   instance_type        = "ecs.g7.large"
   security_groups      = [alicloud_security_group.bastion-sg.id]
   vswitch_id           = module.vpc.vswitch_ids[1]

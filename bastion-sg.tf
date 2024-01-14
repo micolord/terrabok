@@ -10,7 +10,7 @@ resource "alicloud_security_group_rule" "bastion-ssh-ingress" {
   ip_protocol       = "tcp"
   port_range        = "22/22"
   security_group_id = alicloud_security_group.bastion-sg.id
-  cidr_ip           = var.vpc_cidr
+  cidr_ip           = "0.0.0.0/0"
 }
 
 resource "alicloud_security_group_rule" "bastion-https-egress" {

@@ -1,11 +1,6 @@
-data "alicloud_images" "ubuntu" {
-  most_recent = true
-  name_regex  = "^ubuntu_20.*64"
-}
-
 resource "alicloud_instance" "bo_ecs_instance_1" {
   instance_name        = "${var.env_name}-${var.project}-bo-fe"
-  image_id             = data.alicloud_images.ubuntu.ids.0
+  image_id             = "ubuntu_20_04_x64_20G_alibase_20231221.vhd"
   instance_type        = "ecs.g7.large"
   security_groups      = [alicloud_security_group.bo-sg.id]
   vswitch_id           = module.vpc.vswitch_ids[1]
@@ -19,7 +14,7 @@ resource "alicloud_instance" "bo_ecs_instance_1" {
 
 resource "alicloud_instance" "bo_ecs_instance_2" {
   instance_name        = "${var.env_name}-${var.project}-bo-be"
-  image_id             = data.alicloud_images.ubuntu.ids.0
+  image_id             = "ubuntu_20_04_x64_20G_alibase_20231221.vhd"
   instance_type        = "ecs.g7.large"
   security_groups      = [alicloud_security_group.bo-sg.id]
   vswitch_id           = module.vpc.vswitch_ids[1]

@@ -7,6 +7,7 @@ resource "alicloud_instance" "bastion_1" {
   password             = "dynamic_random_password"
   system_disk_category = "cloud_essd"
   system_disk_size     = 100
+  internet_max_bandwidth_out = "20"
   tags = {
     Name = "${var.env_name}-${var.project}-bastion_1"
   }

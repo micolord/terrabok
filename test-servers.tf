@@ -35,6 +35,8 @@ resource "alicloud_instance" "bo_ecs_instance_test_2" {
 resource "azurerm_redis_cache" "redis_instance" {
   name                = "${var.env_name}-${var.project}-testing-cache"
   location            = "Default Resource Group"
+  location            = "Manila"
+  resource_group_name = "Default Resource Group"
   capacity            = 2
   family              = "C"
   sku_name            = "Standard"

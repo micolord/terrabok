@@ -31,7 +31,7 @@ resource "alicloud_instance" "bo_ecs_instance_test_2" {
   }
 }
 
-
+/*
 resource "azurerm_redis_cache" "redis_instance" {
   name                = "${var.env_name}-${var.project}-testing-cache"
   location            = "Manila"
@@ -45,3 +45,4 @@ resource "azurerm_redis_cache" "redis_instance" {
   redis_configuration {
   }
 }
+*/

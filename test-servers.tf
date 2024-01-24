@@ -1,5 +1,5 @@
-resource "alicloud_instance" "bo_ecs_instance_1" {
-  instance_name        = "${var.env_name}-${var.project}-bo-fe"
+resource "alicloud_instance" "bo_ecs_instance_test_1" {
+  instance_name        = "${var.env_name}-${var.project}-testing-fe"
   image_id             = "ubuntu_20_04_x64_20G_alibase_20231221.vhd"
   instance_type        = "ecs.g7.large"
   security_groups      = [alicloud_security_group.bo-sg.id]
@@ -8,12 +8,12 @@ resource "alicloud_instance" "bo_ecs_instance_1" {
   system_disk_category = "cloud_essd"
   system_disk_size     = 100
   tags = {
-    Name = "${var.env_name}-${var.project}-bo-fe"
+    Name = "${var.env_name}-${var.project}-test-fe"
   }
 }
 
-resource "alicloud_instance" "bo_ecs_instance_2" {
-  instance_name        = "${var.env_name}-${var.project}-bo-be"
+resource "alicloud_instance" "bo_ecs_instance_test_2" {
+  instance_name        = "${var.env_name}-${var.project}-testing-be"
   image_id             = "ubuntu_20_04_x64_20G_alibase_20231221.vhd"
   instance_type        = "ecs.g7.large"
   security_groups      = [alicloud_security_group.bo-sg.id]
@@ -22,6 +22,6 @@ resource "alicloud_instance" "bo_ecs_instance_2" {
   system_disk_category = "cloud_essd"
   system_disk_size     = 100
   tags = {
-    Name = "${var.env_name}-${var.project}-bo-be"
+    Name = "${var.env_name}-${var.project}-test-be"
   }
 }

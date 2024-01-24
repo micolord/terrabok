@@ -16,6 +16,38 @@ resource "alicloud_security_group_rule" "fe-https-egress" {
   type              = "egress"
   ip_protocol       = "tcp"
   port_range        = "443/443"
-  security_group_id = alicloud_security_group.bo-sg.id
+  security_group_id = alicloud_security_group.fe-sg.id
   cidr_ip           = var.vpc_cidr
+}
+
+resource "alicloud_security_group_rule" "fe-ssh" {
+  type              = "ingress"
+  ip_protocol       = "tcp"
+  port_range        = "22/22"
+  security_group_id = alicloud_security_group.fe-sg.id
+  cidr_ip           = var.vpc_cidr
+}
+
+resource "alicloud_security_group_rule" "fe-redis-egress" {
+  type              = "egress"
+  ip_protocol       = "tcp"
+  port_range        = "6379/6379"
+  security_group_id = alicloud_security_group.fe-sg.id
+  cidr_ip           = var.vpc_cidr
+}
+
+resource "alicloud_security_group_rule" "fe-udp-dns-egress" {
+  type              = "egress"
+  ip_protocol       = "udp"
+  port_range        = "53/53"
+  security_group_id = alicloud_security_group.fe-sg.id
+  cidr_ip           = "0.0.0.0/0"
+}
+
+resource "alicloud_security_group_rule" "fe-tcp-dns-egress" {
+  type              = "egress"
+  ip_protocol       = "tcp"
+  port_range        = "53/53"
+  security_group_id = alicloud_security_group.fe-sg.id
+  cidr_ip           = "0.0.0.0/0"
 }

@@ -61,7 +61,3 @@ variable "jobproc_domain" {
 variable "socket_domain" {
     description = "Socket Domain"
 }
-
-variable "cert_id" {
-    description = "Cert ID"
-}

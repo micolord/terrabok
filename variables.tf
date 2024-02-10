@@ -58,6 +58,6 @@ variable "jobproc_domain" {
     description = "Jobproc Domain"
 }
 
-variable "socket_domain" {
-    description = "Socket Domain"
-}
+#variable "socket_domain" {
+#    description = "Socket Domain"
+#}

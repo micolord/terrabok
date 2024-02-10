@@ -34,6 +34,10 @@ variable "az_a" {
     description = "AVAILABILITY ZONE"
 }
 
+variable "cert_id" {
+    description = "Cert ID"
+}
+
 #variable "gl_fe_domain" {
 #    description = "GL FE Domain"
 #}

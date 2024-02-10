@@ -15,6 +15,14 @@ priv_c = "10.21.4.0/24"
 #private_subnet_cidr_8 = "10.5.9.0/24"
 az_a = "ap-southeast-6a"
 
+// domains
+gl_fe_domain = "bokbokgp-uat.vip"
+gl_be_domain = "gl-be.bokbokgp-uat.vip"
+bo_fe_domain = "bo-fe.bokbokgp-uat.vip"
+bo_be_domain = "bo-be.bokbokgp-uat.vip"
+jobproc_domain = "jobproc.bokbokgp-uat.vip"
+#socket_domain  = "socket.bokbokgp-uat.vip"
+cert_id = "69291-ap-southeast-1"
 
 // Back Office
 #bo_fe_ami_id = "aliyun_3_x64_20G_qboot_alibase_20230727.vhd"
